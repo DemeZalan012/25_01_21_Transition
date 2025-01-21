@@ -9,27 +9,29 @@
     background-color: lightblue;
 }
 
-/* .box1:hover {
+.box1:hover {
     background-color: lightcoral;
-} */
+}
 
 .box2 {
     background-color: lightgreen;
 }
 
-/* .box2:hover {
+.box2:hover {
     transform: rotate(45deg);
-} */
+}
 
 .box3 {
     background-color: rgb(246, 246, 156);
+    transition: width 2s ease, height 2s ease, background-color 2s ease;
 }
 
-/* .box3:hover {
+
+.box3:hover {
     width: 200px;
     height: 200px;
     background-color: lightsalmon;
-} */
+}
 
 .box4 {
     background-color: lightcyan;
@@ -42,13 +44,15 @@
 
 .box5 {
     background-color: lightpink;
+    transition: width 2s ease, height 2s ease, background-color 2s ease;
 }
 
-/* .box5:hover {
-    width: 200px;
-    height: 200px;
-    background-color: lightseagreen;
-} */
+ .box5:hover {
+    width: 1000px;
+    height: 1000px;
+    background-image: url(ciganyokmedenceben.png);
+
+}
 
 p {
     font-size: 20px;
@@ -59,3 +63,62 @@ p {
     background-color: black;
     margin: 20px;
 }
+
+
+ 
+.button {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -4px;
+    top: -1px;
+    margin: auto;
+    width: 128px;
+    height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .button::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+    transform: translate3d(0, 0, 0) scale(0.95);
+    filter: blur(20px);
+  }
+  
+  .button:hover::after {
+    filter: blur(30px);
+  }
+  
+  .button:hover::before {
+    transform: rotate(-180deg);
+  }
+  
+  .button:active::before {
+    scale: 0.7;
+  }
+  
+  
